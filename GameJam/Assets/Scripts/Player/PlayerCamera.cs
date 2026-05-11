@@ -10,8 +10,6 @@ public class PlayerCamera
         this.sensitivity = sensitivity;
         this.xRotation = xRotation;
         this.transform = transform;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
     }
 
     public void Tick()
