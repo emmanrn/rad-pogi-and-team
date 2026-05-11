@@ -1,16 +1,12 @@
 using UnityEngine;
-
-public class DialogLoader : MonoBehaviour
+namespace DialogComponents
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class DialogLoader : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField] private DialogObject dialogObject;
+        public void LoadDialog()
+        {
+            DialogSystem.Instance.SendDialogToUI(dialogObject);
+        }
     }
 }
