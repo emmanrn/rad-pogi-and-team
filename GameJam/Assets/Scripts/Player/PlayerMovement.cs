@@ -6,27 +6,27 @@ public class PlayerMovement
     private Transform transform;
     private float speed;
     private float gravity;
-    private Vector3 velocity;
-    public void Init(CharacterController cc, Transform transform, Vector3 velocity, float speed, float gravity)
+    private Vector3 velocity = Vector3.zero;
+    public void Init(CharacterController cc, Transform transform, float speed, float gravity)
     {
         this.cc = cc;
         this.transform = transform;
-        this.velocity = velocity;
         this.speed = speed;
         this.gravity = gravity;
     }
 
-    public void FixedTick()
+    public void Tick()
     {
         Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
-        cc.Move(move * speed * Time.fixedDeltaTime);
+        move = Vector3.ClampMagnitude(move, 1f);
+        cc.Move(move * speed * Time.deltaTime);
 
         if (cc.isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
 
-        velocity.y += gravity * Time.fixedDeltaTime;
-        cc.Move(velocity * Time.fixedDeltaTime);
+        velocity.y += gravity * Time.deltaTime;
+        cc.Move(velocity * Time.deltaTime);
     }
 }

@@ -1,9 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     // singleton
     public static Player Instance;
+
+    [SerializeField] private CharacterController cc;
+    [SerializeField] private Camera mainCamera;
 
     // player settings
     [SerializeField] private float PLAYER_SPEED = 5f;
@@ -12,12 +16,9 @@ public class Player : MonoBehaviour
     // camera sens
     [SerializeField] private float CAMERA_SENSITIVITY = 3f;
 
-    [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask interactableMask;
     [SerializeField] private float INTERACT_DISTANCE = 5f;
 
-    private CharacterController cc;
-    private Vector3 velocity;
     private Transform cameraTransform;
 
     private PlayerMovement movement = new PlayerMovement();
@@ -40,11 +41,10 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        cc = GetComponent<CharacterController>();
         cameraTransform = mainCamera.transform;
 
         // init
-        movement.Init(cc, cameraTransform, velocity, PLAYER_SPEED, PLAYER_GRAVITY);
+        movement.Init(cc, cameraTransform, PLAYER_SPEED, PLAYER_GRAVITY);
         cam.Init(CAMERA_SENSITIVITY, X_ROTATION, cameraTransform);
         interaction.Init(mainCamera, interactableMask, INTERACT_DISTANCE);
 
@@ -56,10 +56,6 @@ public class Player : MonoBehaviour
     {
         cam.Tick();
         interaction.Tick();
-    }
-
-    void FixedUpdate()
-    {
-        movement.FixedTick();
+        movement.Tick();
     }
 }

@@ -280,6 +280,58 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &762779578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762779580}
+  - component: {fileID: 762779579}
+  m_Layer: 0
+  m_Name: PlayerSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &762779579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762779578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c54649b2f5124844baec723f69cee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  cc: {fileID: 1304630820}
+  mainCamera: {fileID: 963194227}
+  PLAYER_SPEED: 5
+  CAMERA_SENSITIVITY: 3
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  INTERACT_DISTANCE: 5
+--- !u!4 &762779580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762779578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960262435
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +711,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3622431391285671130, guid: 6197df3a14143924c87354075cb5efce, type: 3}
     m_RemovedGameObjects:
     - {fileID: 310766658521805099, guid: 6197df3a14143924c87354075cb5efce, type: 3}
     m_AddedGameObjects:
@@ -798,6 +851,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b083d024a3209c14ca91359144cd1981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+--- !u!143 &1304630820 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 237977737392561774, guid: 6197df3a14143924c87354075cb5efce, type: 3}
+  m_PrefabInstance: {fileID: 1082093615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524215352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,3 +1980,4 @@ SceneRoots:
   - {fileID: 1537224899}
   - {fileID: 1828617863}
   - {fileID: 1744144621}
+  - {fileID: 762779580}
