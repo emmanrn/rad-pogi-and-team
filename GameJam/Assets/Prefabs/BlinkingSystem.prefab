@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBlink
   panicAmount: 0
   panicIncreaseMultiplier: 10
-  panicDecreaseMultiplier: 2.5
+  panicDecreaseMultiplier: 5

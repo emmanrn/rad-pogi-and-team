@@ -86,3 +86,8 @@ crashlytics-build.properties
 *_bak*.hipnc
 
 *.DS_Store
+
+# Local Documentation
+GDD.md
+GEMINI.md
+Tutorial.md

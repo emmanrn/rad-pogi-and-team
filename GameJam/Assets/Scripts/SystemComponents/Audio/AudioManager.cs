@@ -5,13 +5,6 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    private const string SFX_PARENT_NAME = "SFX";
-    private const string SFX_NAME_FORMAT = "SFX - [{0}]";
-    public const float TRACK_TRANSITION_SPEED = 1f;
-
-    public static AudioManager Instance { get; private set; }
-    public Dictionary<int, AudioChannel> channels = new Dictionary<int, AudioChannel>();
-
     // NOTE FOR IMPORTING AUDIO ASSETS
     // for short and rarely played sounds:
     //  comporessed in memory and adpcm
@@ -22,14 +15,25 @@ public class AudioManager : MonoBehaviour
     // for music/ambient
     // streaming and set quality to ~70 format is vorbis
 
-
     // channels:
     // music = 1
     // ambience = 0
 
+    public const string MUSIC_VOLUME_PARAM_NAME = "MusicVolume";
+    public const string SFX_VOLUME_PARAM_NAME = "SFXVolume";
+    private const string SFX_PARENT_NAME = "SFX";
+    private const string SFX_NAME_FORMAT = "SFX - [{0}]";
+    public const float TRACK_TRANSITION_SPEED = 1f;
+
+    public static AudioManager Instance { get; private set; }
+    public Dictionary<int, AudioChannel> channels = new Dictionary<int, AudioChannel>();
+
+
     public AudioMixerGroup musicMixer;
 
     public AudioMixerGroup sfxMixer;
+
+    public AnimationCurve audioFalloffCurve;
 
     private Transform sfxRoot;
 

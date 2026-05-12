@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // singleton
-    public static Player Instance;
+    public static Player Instance { get; private set; }
 
     public enum State
     {
@@ -11,9 +11,10 @@ public class Player : MonoBehaviour
         IsInDialogue,
         IsLoading,
         IsViewing,
+        IsDisabled,
     }
 
-    public State currentState { get; set; }= State.IsPlaying;
+    public State currentState { get; set; } = State.IsPlaying;
 
     [SerializeField] private CharacterController cc;
     [SerializeField] private Camera mainCamera;
@@ -35,8 +36,6 @@ public class Player : MonoBehaviour
     private PlayerCamera cam = new PlayerCamera();
     private PlayerInteraction interaction = new PlayerInteraction();
 
-    public bool isPlayerInitialized = false;
-
     void Awake()
     {
         if (Instance)
@@ -54,31 +53,32 @@ public class Player : MonoBehaviour
         InitializePlayerController();
     }
 
+    //Initializes Player references and defaults. If fail to find references, return
     public void InitializePlayerController()
     {
-        isPlayerInitialized = false;
-
         cc = PlayerReference.Instance.cc;
         mainCamera = PlayerReference.Instance.cam;
-        
+
         if (cc == null && mainCamera == null)
-            this.enabled = false;
-        
+        {
+            SetState(State.IsDisabled);
+            return;
+        }
         cameraTransform = mainCamera.transform;
 
-        // init
+        // Init
         movement.Init(cc, cameraTransform, PLAYER_SPEED, PLAYER_GRAVITY);
         cam.Init(CAMERA_SENSITIVITY, X_ROTATION, cameraTransform);
         interaction.Init(mainCamera, interactableMask, prompt, INTERACT_DISTANCE);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        isPlayerInitialized = true;
+        SetState(State.IsPlaying);
     }
 
     void Update()
     {
+        if (PauseSystem.Instance.paused)
+            return;
+
         switch (currentState)
         {
             case State.IsPlaying:
@@ -114,17 +114,19 @@ public class Player : MonoBehaviour
                 Cursor.visible = true;
 
                 break;
-            
+
             case State.IsLoading:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
-            
+
             case State.IsViewing:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
-                
         }
+
+        //Place this somewhere decent
+        prompt.SetActive(false);
     }
 }
