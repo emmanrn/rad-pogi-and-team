@@ -6,10 +6,14 @@ namespace DialogComponents
     {
         public static DialogSystem Instance;
 
-        private void Awake()
+
+        void Awake()
         {
             if (Instance)
+            {
+                Destroy(gameObject);
                 return;
+            }
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -19,5 +23,7 @@ namespace DialogComponents
         {
             DialogUI.Instance.StartDialog(dialogObject);
         }
+
+
     }
 }
