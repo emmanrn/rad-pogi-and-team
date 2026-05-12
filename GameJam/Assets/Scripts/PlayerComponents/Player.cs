@@ -122,7 +122,9 @@ public class Player : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
-                
         }
+        
+        //Place this somewhere decent
+        prompt.SetActive(false);
     }
 }
