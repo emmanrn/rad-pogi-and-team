@@ -26,9 +26,7 @@ public class LoadSceneSystem : MonoBehaviour
             StartCoroutine(LoadScene(RoomType.PlayRoom));
         else if (currentRoom == RoomType.PlayRoom)
         {
-            Debug.Log("End Game!");
-            //SceneManager.LoadScene("ENDGAME")
-            return;
+           StartCoroutine(LoadScene("EndingScene"));
         }
     }
     
@@ -66,4 +64,5 @@ public static class RoomType
     public const string Kitchen = "KitchenScene";
     public const string LivingRoom = "LivingRoomScene";
     public const string PlayRoom = "PlayRoomScene";
+    
 }

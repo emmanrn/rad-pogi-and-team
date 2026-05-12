@@ -9,7 +9,11 @@ namespace DialogComponents
         private void Awake()
         {
             if (Instance)
+            {
+                Destroy(gameObject);
                 return;
+            }
+               
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -37,14 +41,15 @@ namespace DialogComponents
         {
             if (index > currentDialogObject.dialogs.Count - 1)
             {
+                Debug.Log("Running");
                 index = 0;
-                currentDialogObject = null;
+               currentDialogObject = null;
                 dialogBox.SetActive(false);
 
                 Player.Instance.SetState(Player.State.IsPlaying);
                 return;
             }
-
+            
             dialogText.text = currentDialogObject.dialogs[index];
             dialogBox.SetActive(true);
             index++;
