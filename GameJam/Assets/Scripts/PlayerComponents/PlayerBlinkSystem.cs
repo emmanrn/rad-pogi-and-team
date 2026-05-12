@@ -8,44 +8,44 @@ using UnityEngine.Events;
 public class PlayerBlinkSystem : MonoBehaviour
 {
     private EnvironmentSystemManager envManager => EnvironmentSystemManager.Instance;
-    public static UnityEvent<float> OnPanicMeterChange =  new UnityEvent<float>();
-    
+    public static UnityEvent<float> OnPanicMeterChange = new UnityEvent<float>();
+
     [SerializeField] private float panicAmount;
     [SerializeField] private float panicIncreaseMultiplier;
     [SerializeField] private float panicDecreaseMultiplier;
-    
+
     private Coroutine blinkCoroutine;
     private bool isBlinking;
-    
+
     void Update()
     {
         if (panicAmount > 0f && !isBlinking)
         {
-            panicAmount = Mathf.Max(panicAmount - panicDecreaseMultiplier * Time.deltaTime,   0f);
+            panicAmount = Mathf.Max(panicAmount - panicDecreaseMultiplier * Time.deltaTime, 0f);
             OnPanicMeterChange.Invoke(panicAmount);
         }
 
-        if (Player.Instance.currentState != Player.State.IsPlaying)
+        if (Player.Instance.currentState != Player.State.IsPlaying || PauseSystem.Instance.paused)
             return;
-        
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             if (isBlinking)
             {
                 if (blinkCoroutine == null) return;
-                
+
                 isBlinking = false;
-                
+
                 StopCoroutine(blinkCoroutine);
                 blinkCoroutine = null;
-                
+
                 OnBlinkEnd();
             }
             else
             {
                 isBlinking = true;
-                
-                if (blinkCoroutine == null) 
+
+                if (blinkCoroutine == null)
                     blinkCoroutine = StartCoroutine(Blink());
             }
         }
@@ -60,19 +60,19 @@ public class PlayerBlinkSystem : MonoBehaviour
         {
             //Start Incrementing time if player state IsPlaying, otherwise stop.
             float timePassed = 0f;
-           if (Player.Instance.currentState != Player.State.IsPlaying)
+            if (Player.Instance.currentState != Player.State.IsPlaying)
                 yield return new WaitUntil(() => Player.Instance.currentState == Player.State.IsPlaying);
-           else
-               timePassed = Time.deltaTime;
-           
-           if (panicAmount <= 100f)
-           {
+            else
+                timePassed = Time.deltaTime;
+
+            if (panicAmount <= 100f)
+            {
                 panicAmount = Mathf.Min(panicAmount + panicIncreaseMultiplier * timePassed, 100f);
                 OnPanicMeterChange.Invoke(panicAmount);
-           }
-           yield return null;
+            }
+            yield return null;
         }
-        
+
         OnBlinkEnd();
         isBlinking = false;
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // singleton
-    public static Player Instance;
+    public static Player Instance { get; private set; }
 
     public enum State
     {
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         IsViewing,
     }
 
-    public State currentState { get; set; }= State.IsPlaying;
+    public State currentState { get; set; } = State.IsPlaying;
 
     [SerializeField] private CharacterController cc;
     [SerializeField] private Camera mainCamera;
@@ -60,10 +60,10 @@ public class Player : MonoBehaviour
 
         cc = PlayerReference.Instance.cc;
         mainCamera = PlayerReference.Instance.cam;
-        
+
         if (cc == null && mainCamera == null)
             this.enabled = false;
-        
+
         cameraTransform = mainCamera.transform;
 
         // init
@@ -79,6 +79,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (PauseSystem.Instance.paused)
+            return;
+
         switch (currentState)
         {
             case State.IsPlaying:
@@ -114,17 +117,17 @@ public class Player : MonoBehaviour
                 Cursor.visible = true;
 
                 break;
-            
+
             case State.IsLoading:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
-            
+
             case State.IsViewing:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
-                
+
         }
     }
 }
