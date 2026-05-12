@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private LayerMask interactableMask;
     [SerializeField] private float INTERACT_DISTANCE = 5f;
+    [SerializeField] private GameObject prompt;
 
     private Transform cameraTransform;
 
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
         // init
         movement.Init(cc, cameraTransform, PLAYER_SPEED, PLAYER_GRAVITY);
         cam.Init(CAMERA_SENSITIVITY, X_ROTATION, cameraTransform);
-        interaction.Init(mainCamera, interactableMask, INTERACT_DISTANCE);
+        interaction.Init(mainCamera, interactableMask, prompt, INTERACT_DISTANCE);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
