@@ -412,8 +412,8 @@ GameObject:
   - component: {fileID: 2115804496559024278}
   - component: {fileID: 5287456774014545220}
   - component: {fileID: 521891154203471572}
-  - component: {fileID: 5354993761599225116}
-  - component: {fileID: 9069218920085875891}
+  - component: {fileID: 3063237018179825238}
+  - component: {fileID: 9041013040556258113}
   m_Layer: 5
   m_Name: GeneralImageText
   m_TagString: Untagged
@@ -511,11 +511,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9069218920085875891}
+  m_TargetGraphic: {fileID: 9041013040556258113}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!222 &5354993761599225116
+--- !u!222 &3063237018179825238
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -523,7 +523,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4381594368250015265}
   m_CullTransparentMesh: 1
---- !u!114 &9069218920085875891
+--- !u!114 &9041013040556258113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
