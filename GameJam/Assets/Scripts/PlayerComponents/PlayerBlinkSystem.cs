@@ -24,8 +24,11 @@ public class PlayerBlinkSystem : MonoBehaviour
             panicAmount = Mathf.Max(panicAmount - panicDecreaseMultiplier * Time.deltaTime,   0f);
             OnPanicMeterChange.Invoke(panicAmount);
         }
+
+        if (Player.Instance.currentState != Player.State.IsPlaying)
+            return;
         
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             if (isBlinking)
             {
@@ -55,15 +58,19 @@ public class PlayerBlinkSystem : MonoBehaviour
 
         while (panicAmount < 100f && isBlinking)
         {
-            if (Player.Instance.currentState != Player.State.IsPlaying)
-                continue;
-            
-            if (panicAmount <= 100f)
-            {
-                panicAmount = Mathf.Min(panicAmount + panicIncreaseMultiplier * Time.deltaTime, 100f);
+            //Start Incrementing time if player state IsPlaying, otherwise stop.
+            float timePassed = 0f;
+           if (Player.Instance.currentState != Player.State.IsPlaying)
+                yield return new WaitUntil(() => Player.Instance.currentState == Player.State.IsPlaying);
+           else
+               timePassed = Time.deltaTime;
+           
+           if (panicAmount <= 100f)
+           {
+                panicAmount = Mathf.Min(panicAmount + panicIncreaseMultiplier * timePassed, 100f);
                 OnPanicMeterChange.Invoke(panicAmount);
-            }
-            yield return null;
+           }
+           yield return null;
         }
         
         OnBlinkEnd();
