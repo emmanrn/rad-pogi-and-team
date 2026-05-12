@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   cc: {fileID: 0}
   mainCamera: {fileID: 0}
-  PLAYER_SPEED: 5
+  PLAYER_SPEED: 4
   CAMERA_SENSITIVITY: 3
   interactableMask:
     serializedVersion: 2

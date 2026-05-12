@@ -9,6 +9,7 @@ public class PlayerBlinkSystem : MonoBehaviour
 {
     private EnvironmentSystemManager envManager => EnvironmentSystemManager.Instance;
     public static UnityEvent<float> OnPanicMeterChange =  new UnityEvent<float>();
+    public static UnityEvent<bool> OnBlinkChange = new UnityEvent<bool>();
     
     [SerializeField] private float panicAmount;
     [SerializeField] private float panicIncreaseMultiplier;
@@ -91,12 +92,14 @@ public class PlayerBlinkSystem : MonoBehaviour
     private void OnBlinkStart()
     {
         envManager.TransformState(true);
+        OnBlinkChange.Invoke(true);
         Debug.Log("Blink start");
     }
 
     private void OnBlinkEnd()
     {
         envManager.TransformState(false);
+        OnBlinkChange.Invoke(false);
         Debug.Log("Blink End");
     }
 }
