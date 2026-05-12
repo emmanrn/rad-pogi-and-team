@@ -6,6 +6,14 @@ public class Player : MonoBehaviour
     // singleton
     public static Player Instance;
 
+    public enum State
+    {
+        IsPlaying,
+        IsInDialogue
+    }
+
+    private State currentState = State.IsPlaying;
+
     [SerializeField] private CharacterController cc;
     [SerializeField] private Camera mainCamera;
 
@@ -28,14 +36,11 @@ public class Player : MonoBehaviour
     void Awake()
     {
 
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance)
+            return;
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
 
     }
 
@@ -54,8 +59,43 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        switch (currentState)
+        {
+            case State.IsPlaying:
+                PlayingTick();
+                break;
+
+        }
+    }
+
+    private void PlayingTick()
+    {
         cam.Tick();
         interaction.Tick();
         movement.Tick();
+
     }
+
+    public void SetState(State newState)
+    {
+        currentState = newState;
+
+        switch (currentState)
+        {
+            case State.IsPlaying:
+
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
+                break;
+
+            case State.IsInDialogue:
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                break;
+        }
+    }
+
 }

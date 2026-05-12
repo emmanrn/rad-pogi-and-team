@@ -14,7 +14,7 @@ namespace DialogComponents
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        
+
         [SerializeField] private TMP_Text dialogText;
         [SerializeField] private GameObject dialogBox;
         private DialogObject currentDialogObject;
@@ -32,17 +32,19 @@ namespace DialogComponents
         }
 
         // temporarily do text based instead of input i guess
-        
+
         public void LoadNextDialog()
         {
-            if (index > currentDialogObject.dialogs.Count-1)
+            if (index > currentDialogObject.dialogs.Count - 1)
             {
                 index = 0;
                 currentDialogObject = null;
                 dialogBox.SetActive(false);
+
+                Player.Instance.SetState(Player.State.IsPlaying);
                 return;
             }
-            
+
             dialogText.text = currentDialogObject.dialogs[index];
             dialogBox.SetActive(true);
             index++;

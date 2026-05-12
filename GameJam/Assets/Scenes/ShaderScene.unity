@@ -738,7 +738,7 @@ GameObject:
   - component: {fileID: 1226424107}
   - component: {fileID: 1226424106}
   - component: {fileID: 1226424105}
-  - component: {fileID: 1226424108}
+  - component: {fileID: 1226424109}
   m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -839,7 +839,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226424103}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1226424108
+--- !u!114 &1226424109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -848,9 +848,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1226424103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b083d024a3209c14ca91359144cd1981, type: 3}
+  m_Script: {fileID: 11500000, guid: d5be586282a7cda4eb285f0d734e4c26, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  m_EditorClassIdentifier: Assembly-CSharp::DialogComponents.DialogLoader
+  dialogObject: {fileID: 11400000, guid: fdde4973bb3865b42a33eaa837d26a76, type: 2}
 --- !u!143 &1304630820 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 237977737392561774, guid: 6197df3a14143924c87354075cb5efce, type: 3}
