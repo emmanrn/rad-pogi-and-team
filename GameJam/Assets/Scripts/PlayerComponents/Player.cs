@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
         IsPlaying,
         IsInDialogue,
         IsLoading,
+        IsViewing,
     }
 
     public State currentState { get; set; }= State.IsPlaying;
@@ -117,7 +118,11 @@ public class Player : MonoBehaviour
             case State.IsLoading:
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-
+                break;
+            
+            case State.IsViewing:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 break;
                 
         }

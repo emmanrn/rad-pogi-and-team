@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ShardDropper : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites; //Dream State- 0, Dis State - 1
+    [SerializeField] private Sprite shardImage;
+    [SerializeField] private string shardName;
+    
     private SpriteRenderer mySprite;
     public bool isDropped { get; private set; }= false;
 
@@ -17,6 +21,7 @@ public class ShardDropper : MonoBehaviour
     public void DropShard()
     {
         isDropped = true;
+        GeneralUIImage.OnGeneralUIImageChange.Invoke(shardImage, shardName);
         EnvironmentSystemManager.Instance.CheckRoomCompletion();
     }
 

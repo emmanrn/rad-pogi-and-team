@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 //Holds reference to interactables and blinking state operations.
 public class EnvironmentSystemManager : MonoBehaviour
 {
     public static EnvironmentSystemManager Instance;
+    public static UnityEvent <int, int> OnShardGet = new UnityEvent<int, int>();
 
     [SerializeField] private Light light;
     [SerializeField] private Color dreamColor;
@@ -32,7 +34,7 @@ public class EnvironmentSystemManager : MonoBehaviour
         roomName = SceneManager.GetActiveScene().name;
     }
 
-    public void GetPhotoReference()
+    private void GetPhotoReference()
     {
         var photo = transform.GetComponentsInChildren<PhotographComponent>().ToList();
         
@@ -55,7 +57,7 @@ public class EnvironmentSystemManager : MonoBehaviour
         }
     }
 
-    public void GetShardDroppers()
+    private void GetShardDroppers()
     {
         shardDroppers = GetComponentsInChildren<ShardDropper>(includeInactive:true).ToList();
     }
@@ -74,7 +76,7 @@ public class EnvironmentSystemManager : MonoBehaviour
             if (shardDropper.isDropped)
                 count++;
         
-        Debug.Log($"Shards Dropped: {count}/{total}");
+        OnShardGet.Invoke(count, total);
         
         return count >= total;
     }
@@ -94,8 +96,8 @@ public class EnvironmentSystemManager : MonoBehaviour
         Debug.Log($"Completed Room {roomName}");
         
         //Do Dialogue
-        yield return new WaitUntil(() => Player.Instance.currentState != Player.State.IsInDialogue);
         
+        yield return new WaitUntil(() => Player.Instance.currentState == Player.State.IsPlaying);
         LoadSceneSystem.Instance.LoadNextRoom(roomName);
     }
 
@@ -114,6 +116,5 @@ public class EnvironmentSystemManager : MonoBehaviour
             light.color = disColor;
             //Do Something
         }
-           
     }
 }
