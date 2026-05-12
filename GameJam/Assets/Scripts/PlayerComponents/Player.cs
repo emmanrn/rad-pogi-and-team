@@ -83,7 +83,6 @@ public class Player : MonoBehaviour
             case State.IsPlaying:
                 PlayingTick();
                 break;
-
         }
     }
 

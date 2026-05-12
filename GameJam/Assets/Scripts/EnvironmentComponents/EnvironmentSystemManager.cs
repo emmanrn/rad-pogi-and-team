@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VectorGraphics;
@@ -10,6 +11,9 @@ public class EnvironmentSystemManager : MonoBehaviour
 {
     public static EnvironmentSystemManager Instance;
 
+    [SerializeField] private Light light;
+    [SerializeField] private Color dreamColor;
+    [SerializeField] private Color disColor;
     private List<ShardDropper> shardDroppers;
     private PhotographComponent photograph;
     private string roomName;
@@ -53,15 +57,13 @@ public class EnvironmentSystemManager : MonoBehaviour
 
     public void GetShardDroppers()
     {
-        shardDroppers = GetComponentsInChildren<ShardDropper>().ToList();
+        shardDroppers = GetComponentsInChildren<ShardDropper>(includeInactive:true).ToList();
     }
 
     public void CheckRoomCompletion()
     {
         if (AreShardsComplete())
             EnablePhotograph();
-        else
-            return;
     }
 
     private bool AreShardsComplete()
@@ -95,5 +97,23 @@ public class EnvironmentSystemManager : MonoBehaviour
         yield return new WaitUntil(() => Player.Instance.currentState != Player.State.IsInDialogue);
         
         LoadSceneSystem.Instance.LoadNextRoom(roomName);
+    }
+
+    public void TransformState(bool blinkState)
+    {
+        foreach (var shardDropper in shardDroppers)
+            shardDropper.ChangeSpriteState(blinkState);
+        
+        //Filter
+        if (!blinkState)
+        {
+            light.color = dreamColor; //Do Something
+        }
+        else
+        {
+            light.color = disColor;
+            //Do Something
+        }
+           
     }
 }

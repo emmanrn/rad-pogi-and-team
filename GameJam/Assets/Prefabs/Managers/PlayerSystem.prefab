@@ -52,7 +52,7 @@ MonoBehaviour:
   interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  INTERACT_DISTANCE: 5
+  INTERACT_DISTANCE: 20
   prompt: {fileID: 4060221000472515795}
   isPlayerInitialized: 0
 --- !u!1001 &6526990220777942037
@@ -143,9 +143,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1557641053716985778, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945635046556646910, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945635046556646910, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945635046556646910, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -844.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945635046556646910, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797701792625379250, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797701792625379250, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797701792625379250, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6298688469773378664, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
       propertyPath: m_Name
       value: Prompt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_fontSize
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119147002357889222, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348057646206087540, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
