@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Scene = Unity.VectorGraphics.Scene;
 
 //Holds reference to interactables and blinking state operations.
 public class EnvironmentSystemManager : MonoBehaviour
@@ -32,6 +34,14 @@ public class EnvironmentSystemManager : MonoBehaviour
         GetPhotoReference();
         GetShardDroppers();
         roomName = SceneManager.GetActiveScene().name;
+
+        SwitchEnvAtPartyRoom();
+    }
+
+    private void SwitchEnvAtPartyRoom()
+    {
+        if (roomName == RoomType.PlayRoom)
+            TransformState(true);
     }
 
     private void GetPhotoReference()
@@ -106,15 +116,6 @@ public class EnvironmentSystemManager : MonoBehaviour
         foreach (var shardDropper in shardDroppers)
             shardDropper.ChangeSpriteState(blinkState);
         
-        //Filter
-        if (!blinkState)
-        {
-            light.color = dreamColor; //Do Something
-        }
-        else
-        {
-            light.color = disColor;
-            //Do Something
-        }
+        light.color = blinkState ? disColor : dreamColor;
     }
 }

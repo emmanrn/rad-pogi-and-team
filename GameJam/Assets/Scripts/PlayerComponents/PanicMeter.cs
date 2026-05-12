@@ -1,10 +1,17 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PanicMeter : MonoBehaviour
 {
     [SerializeField] private Image fillImage;
+
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == RoomType.PlayRoom)
+            gameObject.SetActive(false);
+    }
 
     private void ChangePanicMeter(float amount)
     {

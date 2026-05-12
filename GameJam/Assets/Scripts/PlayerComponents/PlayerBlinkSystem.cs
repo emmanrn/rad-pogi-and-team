@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.SceneManagement;
 
 
 //So much to decouple and make modular here i dont have time.
@@ -16,6 +16,17 @@ public class PlayerBlinkSystem : MonoBehaviour
     
     private Coroutine blinkCoroutine;
     private bool isBlinking;
+    
+    private void Start()
+    {
+        DisableBlinkingAtPlayRoom();
+    }
+
+    void DisableBlinkingAtPlayRoom()
+    {
+        if (SceneManager.GetActiveScene().name == RoomType.PlayRoom)
+            this.enabled = false;
+    }
     
     void Update()
     {
