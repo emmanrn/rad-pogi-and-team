@@ -15,7 +15,7 @@ public class PlayerBlinkSystem : MonoBehaviour
     [SerializeField] private float panicIncreaseMultiplier;
     [SerializeField] private float panicDecreaseMultiplier;
     
-    private Coroutine blinkCoroutine;
+    private Coroutine blinkCoroutine = null;
     private bool isBlinking;
     
     private void Start()
