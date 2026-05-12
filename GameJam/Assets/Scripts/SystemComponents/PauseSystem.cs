@@ -4,14 +4,18 @@ public class PauseSystem : MonoBehaviour
 {
     public static PauseSystem Instance { get; private set; }
     [SerializeField] private GameObject pauseObj;
-    public bool paused { get; private set; }
+    public bool paused { get; private set; } = false;
 
     void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+           
         else
-            DestroyImmediate(gameObject);
+            Destroy(gameObject);
     }
 
     // void Start()

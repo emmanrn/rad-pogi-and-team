@@ -54,7 +54,6 @@ MonoBehaviour:
     m_Bits: 64
   INTERACT_DISTANCE: 20
   prompt: {fileID: 4060221000472515795}
-  isPlayerInitialized: 0
 --- !u!1001 &6526990220777942037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,20 +179,52 @@ PrefabInstance:
       value: Prompt
       objectReference: {fileID: 0}
     - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_text
+      value: Press "E" to Examine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
       propertyPath: m_fontSize
-      value: 84
+      value: 59.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 84cd5c553355cb240a0b349c1cf83968, type: 2}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
       propertyPath: m_fontSizeBase
-      value: 84
+      value: 59.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5943962979797226269, guid: 84cd5c553355cb240a0b349c1cf83968, type: 2}
+    - target: {fileID: 6495333264024553041, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7119147002357889222, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8348057646206087540, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
       propertyPath: m_SizeDelta.x
       value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348057646206087540, guid: 08b8c9fddf07c4340a858969f8167ad5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
