@@ -6,7 +6,9 @@ using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using Scene = Unity.VectorGraphics.Scene;
 
 //Holds reference to interactables and blinking state operations.
@@ -15,9 +17,10 @@ public class EnvironmentSystemManager : MonoBehaviour
     public static EnvironmentSystemManager Instance;
     public static UnityEvent <int, int> OnShardGet = new UnityEvent<int, int>();
 
-    [SerializeField] private Light light;
-    [SerializeField] private Color dreamColor;
-    [SerializeField] private Color disColor;
+    [SerializeField] private Volume globalVolume;
+    [SerializeField] private VolumeProfile disillusionedProjile;
+    [SerializeField] private VolumeProfile dreamcoreProfile;
+
     private List<ShardDropper> shardDroppers;
     private PhotographComponent photograph;
     private string roomName;
@@ -25,6 +28,9 @@ public class EnvironmentSystemManager : MonoBehaviour
     //Non-Persistent Singleton
     private void Awake()
     {
+        if (Instance)
+            return;
+        
         Instance = this;
     }
 
@@ -116,6 +122,10 @@ public class EnvironmentSystemManager : MonoBehaviour
         foreach (var shardDropper in shardDroppers)
             shardDropper.ChangeSpriteState(blinkState);
         
-        light.color = blinkState ? disColor : dreamColor;
+        // Changed 5/13/2026 12:14 AM
+        if (blinkState)
+            globalVolume.profile = disillusionedProjile;
+        else
+            globalVolume.profile = dreamcoreProfile;
     }
 }
