@@ -1165,6 +1165,12 @@ MonoBehaviour:
   globalVolume: {fileID: 644871509}
   disillusionedProjile: {fileID: 11400000, guid: d96ae79389173bb439ba02e74dd9fd54, type: 2}
   dreamcoreProfile: {fileID: 11400000, guid: 7349cb1214c6af744886989a41d9d93c, type: 2}
+  shardDroppers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  photograph: {fileID: 992883563}
 --- !u!4 &893639976
 Transform:
   m_ObjectHideFlags: 0
@@ -1414,6 +1420,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8574661552066467860, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
   m_PrefabInstance: {fileID: 992883561}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &992883563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2204964314978760824, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
+  m_PrefabInstance: {fileID: 992883561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0822a10159c148e58452be76420783dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhotographObject
 --- !u!1 &1046556145
 GameObject:
   m_ObjectHideFlags: 0

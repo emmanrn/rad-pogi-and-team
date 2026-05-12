@@ -21,8 +21,8 @@ public class EnvironmentSystemManager : MonoBehaviour
     [SerializeField] private VolumeProfile disillusionedProjile;
     [SerializeField] private VolumeProfile dreamcoreProfile;
 
-    private List<ShardDropper> shardDroppers;
-    private PhotographComponent photograph;
+    [SerializeField] private List<ShardDropper> shardDroppers;
+    [SerializeField] private PhotographComponent photograph;
     private string roomName;
 
     //Non-Persistent Singleton
@@ -36,11 +36,7 @@ public class EnvironmentSystemManager : MonoBehaviour
 
     public void Start()
     {
-        //Find References in Scene
-        GetPhotoReference();
-        GetShardDroppers();
         roomName = SceneManager.GetActiveScene().name;
-
         SwitchEnvAtPartyRoom();
     }
 
@@ -50,33 +46,33 @@ public class EnvironmentSystemManager : MonoBehaviour
             TransformState(true);
     }
 
-    private void GetPhotoReference()
-    {
-        var photo = transform.GetComponentsInChildren<PhotographComponent>().ToList();
-        
-        if (photo.Count == 0)
-        {
-            Debug.Log("No Photo found");
-            return;
-        }
-
-        photograph = photo[0];
-        photograph.gameObject.SetActive(false);
-        
-        if (photo.Count > 1)
-        {
-            Debug.Log($"Found More than one Instance of Photo. Removing the rest");
-            for (int i = 1; i < photo.Count; i++)
-            {
-                Destroy(photo[i]);
-            }
-        }
-    }
-
-    private void GetShardDroppers()
-    {
-        shardDroppers = GetComponentsInChildren<ShardDropper>(includeInactive:true).ToList();
-    }
+    // private void GetPhotoReference()
+    // {
+    //     var photo = transform.GetComponentsInChildren<PhotographComponent>().ToList();
+    //     
+    //     if (photo.Count == 0)
+    //     {
+    //         Debug.Log("No Photo found");
+    //         return;
+    //     }
+    //
+    //     photograph = photo[0];
+    //     photograph.gameObject.SetActive(false);
+    //     
+    //     if (photo.Count > 1)
+    //     {
+    //         Debug.Log($"Found More than one Instance of Photo. Removing the rest");
+    //         for (int i = 1; i < photo.Count; i++)
+    //         {
+    //             Destroy(photo[i]);
+    //         }
+    //     }
+    // }
+    //
+    // private void GetShardDroppers()
+    // {
+    //     shardDroppers = GetComponentsInChildren<ShardDropper>(includeInactive:true).ToList();
+    // }
 
     public void CheckRoomCompletion()
     {

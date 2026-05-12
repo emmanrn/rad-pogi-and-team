@@ -47,9 +47,9 @@ public class InteractableObject : MonoBehaviour, IInteractable
         yield break;
     }
 
-    private void LateUpdate()
-    {
-        if (PlayerReference.Instance.cam != null)
-            transform.LookAt(PlayerReference.Instance.cam.transform);
-    }
+    // private void LateUpdate()
+    // {
+    //     if (PlayerReference.Instance.cam != null)
+    //         transform.LookAt(PlayerReference.Instance.cam.transform);
+    // }
 }
