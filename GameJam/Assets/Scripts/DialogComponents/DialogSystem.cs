@@ -6,7 +6,8 @@ namespace DialogComponents
     {
         public static DialogSystem Instance;
 
-        private void Awake()
+
+        void Awake()
         {
             if (Instance)
                 return;
@@ -19,5 +20,7 @@ namespace DialogComponents
         {
             DialogUI.Instance.StartDialog(dialogObject);
         }
+
+
     }
 }

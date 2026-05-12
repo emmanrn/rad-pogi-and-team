@@ -22,11 +22,11 @@ public class PlayerBlink : MonoBehaviour
 
         timer -= Time.deltaTime;
 
-        if (timer <= 0f)
-        {
-            StartCoroutine(Blink());
-            timer = blinkInterval;
-        }
+        // if (timer <= 0f)
+        // {
+        //     StartCoroutine(Blink());
+        //     timer = blinkInterval;
+        // }
 
         if (Input.GetKeyDown(KeyCode.B) && !isBlinking)
         {
