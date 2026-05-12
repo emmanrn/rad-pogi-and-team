@@ -37,6 +37,7 @@ namespace DialogComponents
 
         public void LoadNextDialogue()
         {
+            Debug.Log("loading");
             if (IsTyping)
             {
                 if (!FastSkipActive)

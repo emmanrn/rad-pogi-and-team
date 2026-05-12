@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.SceneManagement;
 
 
 //So much to decouple and make modular here i dont have time.
@@ -9,13 +9,25 @@ public class PlayerBlinkSystem : MonoBehaviour
 {
     private EnvironmentSystemManager envManager => EnvironmentSystemManager.Instance;
     public static UnityEvent<float> OnPanicMeterChange = new UnityEvent<float>();
+    public static UnityEvent<bool> OnBlinkChange = new UnityEvent<bool>();
 
     [SerializeField] private float panicAmount;
     [SerializeField] private float panicIncreaseMultiplier;
     [SerializeField] private float panicDecreaseMultiplier;
 
-    private Coroutine blinkCoroutine;
+    private Coroutine blinkCoroutine = null;
     private bool isBlinking;
+
+    private void Start()
+    {
+        DisableBlinkingAtPlayRoom();
+    }
+
+    void DisableBlinkingAtPlayRoom()
+    {
+        if (SceneManager.GetActiveScene().name == RoomType.PlayRoom)
+            this.enabled = false;
+    }
 
     void Update()
     {
@@ -80,12 +92,14 @@ public class PlayerBlinkSystem : MonoBehaviour
     private void OnBlinkStart()
     {
         envManager.TransformState(true);
+        OnBlinkChange.Invoke(true);
         Debug.Log("Blink start");
     }
 
     private void OnBlinkEnd()
     {
         envManager.TransformState(false);
+        OnBlinkChange.Invoke(false);
         Debug.Log("Blink End");
     }
 }

@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using Scene = Unity.VectorGraphics.Scene;
 
 //Holds reference to interactables and blinking state operations.
 public class EnvironmentSystemManager : MonoBehaviour
@@ -13,9 +17,10 @@ public class EnvironmentSystemManager : MonoBehaviour
     public static EnvironmentSystemManager Instance;
     public static UnityEvent <int, int> OnShardGet = new UnityEvent<int, int>();
 
-    [SerializeField] private Light light;
-    [SerializeField] private Color dreamColor;
-    [SerializeField] private Color disColor;
+    [SerializeField] private Volume globalVolume;
+    [SerializeField] private VolumeProfile disillusionedProjile;
+    [SerializeField] private VolumeProfile dreamcoreProfile;
+
     private List<ShardDropper> shardDroppers;
     private PhotographComponent photograph;
     private string roomName;
@@ -23,6 +28,9 @@ public class EnvironmentSystemManager : MonoBehaviour
     //Non-Persistent Singleton
     private void Awake()
     {
+        if (Instance)
+            return;
+        
         Instance = this;
     }
 
@@ -32,6 +40,14 @@ public class EnvironmentSystemManager : MonoBehaviour
         GetPhotoReference();
         GetShardDroppers();
         roomName = SceneManager.GetActiveScene().name;
+
+        SwitchEnvAtPartyRoom();
+    }
+
+    private void SwitchEnvAtPartyRoom()
+    {
+        if (roomName == RoomType.PlayRoom)
+            TransformState(true);
     }
 
     private void GetPhotoReference()
@@ -106,15 +122,10 @@ public class EnvironmentSystemManager : MonoBehaviour
         foreach (var shardDropper in shardDroppers)
             shardDropper.ChangeSpriteState(blinkState);
         
-        //Filter
-        if (!blinkState)
-        {
-            light.color = dreamColor; //Do Something
-        }
+        // Changed 5/13/2026 12:14 AM
+        if (blinkState)
+            globalVolume.profile = disillusionedProjile;
         else
-        {
-            light.color = disColor;
-            //Do Something
-        }
+            globalVolume.profile = dreamcoreProfile;
     }
 }

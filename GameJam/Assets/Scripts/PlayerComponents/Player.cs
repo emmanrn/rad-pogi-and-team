@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
         IsInDialogue,
         IsLoading,
         IsViewing,
+        IsDisabled,
     }
 
     public State currentState { get; set; } = State.IsPlaying;
@@ -35,8 +36,6 @@ public class Player : MonoBehaviour
     private PlayerCamera cam = new PlayerCamera();
     private PlayerInteraction interaction = new PlayerInteraction();
 
-    public bool isPlayerInitialized = false;
-
     void Awake()
     {
         if (Instance)
@@ -54,27 +53,25 @@ public class Player : MonoBehaviour
         InitializePlayerController();
     }
 
+    //Initializes Player references and defaults. If fail to find references, return
     public void InitializePlayerController()
     {
-        isPlayerInitialized = false;
-
         cc = PlayerReference.Instance.cc;
         mainCamera = PlayerReference.Instance.cam;
 
         if (cc == null && mainCamera == null)
-            this.enabled = false;
-
+        {
+            SetState(State.IsDisabled);
+            return;
+        }
         cameraTransform = mainCamera.transform;
 
-        // init
+        // Init
         movement.Init(cc, cameraTransform, PLAYER_SPEED, PLAYER_GRAVITY);
         cam.Init(CAMERA_SENSITIVITY, X_ROTATION, cameraTransform);
         interaction.Init(mainCamera, interactableMask, prompt, INTERACT_DISTANCE);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        isPlayerInitialized = true;
+        SetState(State.IsPlaying);
     }
 
     void Update()
@@ -127,7 +124,9 @@ public class Player : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
-
         }
+
+        //Place this somewhere decent
+        prompt.SetActive(false);
     }
 }
