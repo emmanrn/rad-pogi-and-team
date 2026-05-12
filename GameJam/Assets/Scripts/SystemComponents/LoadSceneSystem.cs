@@ -41,7 +41,7 @@ public class LoadSceneSystem : MonoBehaviour
        }
        
        //If player exists, set to loading
-       if (Player.Instance != null && Player.Instance.isPLayerInitialized) 
+       if (Player.Instance != null && Player.Instance.isPlayerInitialized) 
            Player.Instance.SetState(Player.State.IsLoading);
        
        //Load Scene and wait
@@ -49,11 +49,11 @@ public class LoadSceneSystem : MonoBehaviour
        yield return new WaitUntil(() => SceneManager.GetActiveScene().isLoaded);
        
        //If player exist. Reinitialize
-       if (Player.Instance != null && Player.Instance.isPLayerInitialized)
+       if (Player.Instance != null && Player.Instance.isPlayerInitialized)
        {
            Player.Instance.InitializePlayerController();
            
-           yield return new WaitUntil(() => Player.Instance.isPLayerInitialized);
+           yield return new WaitUntil(() => Player.Instance.isPlayerInitialized);
            Player.Instance.SetState(Player.State.IsPlaying);
        }
     }

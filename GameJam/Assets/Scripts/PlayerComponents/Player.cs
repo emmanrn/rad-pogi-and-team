@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     private PlayerCamera cam = new PlayerCamera();
     private PlayerInteraction interaction = new PlayerInteraction();
 
-    public bool isPLayerInitialized = false;
+    public bool isPlayerInitialized = false;
 
     void Awake()
     {
@@ -55,10 +55,13 @@ public class Player : MonoBehaviour
 
     public void InitializePlayerController()
     {
-        isPLayerInitialized = false;
+        isPlayerInitialized = false;
 
         cc = PlayerReference.Instance.cc;
         mainCamera = PlayerReference.Instance.cam;
+        
+        if (cc == null && mainCamera == null)
+            this.enabled = false;
         
         cameraTransform = mainCamera.transform;
 
@@ -70,7 +73,7 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        isPLayerInitialized = true;
+        isPlayerInitialized = true;
     }
 
     void Update()
