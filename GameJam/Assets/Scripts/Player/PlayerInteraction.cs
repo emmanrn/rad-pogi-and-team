@@ -44,7 +44,7 @@ public class PlayerInteraction
         if (hit.collider.TryGetComponent(
             out IInteractable interactable))
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 interactable.Interact();
             }

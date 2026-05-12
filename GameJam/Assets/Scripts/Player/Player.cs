@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,10 +8,11 @@ public class Player : MonoBehaviour
     public enum State
     {
         IsPlaying,
-        IsInDialogue
+        IsInDialogue,
+        IsLoading,
     }
 
-    private State currentState = State.IsPlaying;
+    public State currentState { get; set; }= State.IsPlaying;
 
     [SerializeField] private CharacterController cc;
     [SerializeField] private Camera mainCamera;
@@ -33,19 +33,32 @@ public class Player : MonoBehaviour
     private PlayerCamera cam = new PlayerCamera();
     private PlayerInteraction interaction = new PlayerInteraction();
 
+    public bool isPLayerInitialized = false;
+
     void Awake()
     {
-
         if (Instance)
+        {
+            Destroy(gameObject);
             return;
+        }
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
     }
 
     void Start()
     {
+        InitializePlayerController();
+    }
+
+    public void InitializePlayerController()
+    {
+        isPLayerInitialized = false;
+
+        cc = PlayerReference.Instance.cc;
+        mainCamera = PlayerReference.Instance.cam;
+        
         cameraTransform = mainCamera.transform;
 
         // init
@@ -55,6 +68,8 @@ public class Player : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        isPLayerInitialized = true;
     }
 
     void Update()
@@ -95,7 +110,13 @@ public class Player : MonoBehaviour
                 Cursor.visible = true;
 
                 break;
+            
+            case State.IsLoading:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                break;
+                
         }
     }
-
 }
