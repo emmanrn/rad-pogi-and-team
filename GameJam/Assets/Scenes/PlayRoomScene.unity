@@ -1604,9 +1604,21 @@ PrefabInstance:
       value: TeddyBear
       objectReference: {fileID: 0}
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.x
+      value: 10.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.y
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88db0d89f064d094ebc7a612137c300c, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d6ced1b51690ad4a8c22c8c8508e052, type: 3}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardName
       value: Memory Shard - Teddy Bear
@@ -1614,7 +1626,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: 88db0d89f064d094ebc7a612137c300c, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d6ced1b51690ad4a8c22c8c8508e052, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -1622,11 +1634,11 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 88db0d89f064d094ebc7a612137c300c, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d6ced1b51690ad4a8c22c8c8508e052, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: 878f8ba84e76a4547aa38f3a1fde3f27, type: 3}
+      objectReference: {fileID: 21300000, guid: f20c80924aca5954cb3c2fdf4ba14fe0, type: 3}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.12
@@ -2450,6 +2462,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 893639976}
     m_Modifications:
+    - target: {fileID: 2204964314978760824, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
+      propertyPath: photoSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f342cd96ad9cdde409e95be7fefd796d, type: 3}
+    - target: {fileID: 5194551035555167738, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 39b0a853d26b97a46ab44317180c3708, type: 3}
     - target: {fileID: 6073817037673602057, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: m_Name
       value: Photograph
@@ -2690,9 +2710,21 @@ PrefabInstance:
       value: Skippy's Old Collar
       objectReference: {fileID: 0}
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.x
+      value: 10.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.y
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: ed487339275852a4cb8dbf4b50ec08f3, type: 3}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardName
       value: Memory Shard - Skippy's Old Collar
@@ -2700,7 +2732,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: ed487339275852a4cb8dbf4b50ec08f3, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -2708,11 +2740,11 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 8f91a2b296fb51f4c8a978eb718dd0c6, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: ed487339275852a4cb8dbf4b50ec08f3, type: 3}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.12
@@ -3355,9 +3387,21 @@ PrefabInstance:
       value: ChildhoodDiary
       objectReference: {fileID: 0}
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.x
+      value: 10.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.y
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: b1e262d25b49c954aa796984b5161c83, type: 3}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardName
       value: Memory Shard - Childhood Diary
@@ -3365,7 +3409,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: b1e262d25b49c954aa796984b5161c83, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -3373,11 +3417,11 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 8f91a2b296fb51f4c8a978eb718dd0c6, type: 3}
+      objectReference: {fileID: 21300000, guid: b1e262d25b49c954aa796984b5161c83, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: b1e262d25b49c954aa796984b5161c83, type: 3}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.681
@@ -3757,9 +3801,21 @@ PrefabInstance:
       value: Shoebox
       objectReference: {fileID: 0}
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.x
+      value: 10.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.y
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: 9acb3c10b1365f249ab4d0580a271d0c, type: 3}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardName
       value: Memory Shard - Shoebox
@@ -3767,7 +3823,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: 9acb3c10b1365f249ab4d0580a271d0c, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -3775,7 +3831,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 8f91a2b296fb51f4c8a978eb718dd0c6, type: 3}
+      objectReference: {fileID: 21300000, guid: 9acb3c10b1365f249ab4d0580a271d0c, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 

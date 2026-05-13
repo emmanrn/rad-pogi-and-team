@@ -1229,7 +1229,7 @@ PrefabInstance:
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f3c2f661e071ebe4499a6080cd3d70f3, type: 3}
+      objectReference: {fileID: 21300000, guid: a779fdd362c650f45bebd50c77f6d592, type: 3}
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -1241,7 +1241,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: f3c2f661e071ebe4499a6080cd3d70f3, type: 3}
+      objectReference: {fileID: 21300000, guid: a779fdd362c650f45bebd50c77f6d592, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -1253,7 +1253,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: f3c2f661e071ebe4499a6080cd3d70f3, type: 3}
+      objectReference: {fileID: 21300000, guid: a779fdd362c650f45bebd50c77f6d592, type: 3}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.19999994
@@ -1670,9 +1670,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.x
+      value: 10.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.y
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: 5a0ee7d9321e54e43ac21a2cbf70b78f, type: 3}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardName
       value: MemoryShard - Drawing
@@ -1680,7 +1692,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: 5a0ee7d9321e54e43ac21a2cbf70b78f, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -1688,11 +1700,11 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 8f91a2b296fb51f4c8a978eb718dd0c6, type: 3}
+      objectReference: {fileID: 21300000, guid: 5a0ee7d9321e54e43ac21a2cbf70b78f, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 21300000, guid: 4787d203119d9e74a852e853d40add21, type: 3}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.20000003
@@ -2162,7 +2174,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: ff54e1be12a7e3945b1d0d45d003ce2e, type: 3}
+      objectReference: {fileID: 21300000, guid: 7977830547a067043b3623abe64a3a3b, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -2170,11 +2182,11 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: ff54e1be12a7e3945b1d0d45d003ce2e, type: 3}
+      objectReference: {fileID: 21300000, guid: 7977830547a067043b3623abe64a3a3b, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 7977830547a067043b3623abe64a3a3b, type: 3}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.2
@@ -3889,9 +3901,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.x
+      value: 10.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_Size.y
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 142e2f5ef01e83740b54c21cb3368909, type: 3}
+      objectReference: {fileID: 21300000, guid: 58f500df646add349bc3d6b2bec33c38, type: 3}
+    - target: {fileID: 5852339584721331972, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardName
       value: Memory Shard - #1 Mug
@@ -3899,7 +3923,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: shardImage
       value: 
-      objectReference: {fileID: 21300000, guid: a77fefc0374e8b44a840316413926a19, type: 3}
+      objectReference: {fileID: 21300000, guid: 58f500df646add349bc3d6b2bec33c38, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: sprites.Array.size
       value: 2
@@ -3907,11 +3931,11 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: 142e2f5ef01e83740b54c21cb3368909, type: 3}
+      objectReference: {fileID: 21300000, guid: 58f500df646add349bc3d6b2bec33c38, type: 3}
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: a77fefc0374e8b44a840316413926a19, type: 3}
+      objectReference: {fileID: 21300000, guid: 40d9d2ae4e348764eabcaab80d986fd5, type: 3}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.116019994
@@ -4245,7 +4269,11 @@ PrefabInstance:
     - target: {fileID: 2204964314978760824, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: photoSprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 6a73cbee7a61760479bdcfba4a57e912, type: 3}
+    - target: {fileID: 5194551035555167738, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a73cbee7a61760479bdcfba4a57e912, type: 3}
     - target: {fileID: 6073817037673602057, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: m_Name
       value: Photograph
