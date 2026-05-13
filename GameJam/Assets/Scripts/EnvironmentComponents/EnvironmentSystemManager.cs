@@ -15,7 +15,7 @@ using Scene = Unity.VectorGraphics.Scene;
 public class EnvironmentSystemManager : MonoBehaviour
 {
     public static EnvironmentSystemManager Instance;
-    public static UnityEvent <int, int> OnShardGet = new UnityEvent<int, int>();
+    public static UnityEvent<int, int> OnShardGet = new UnityEvent<int, int>();
 
     [SerializeField] private Volume globalVolume;
     [SerializeField] private VolumeProfile disillusionedProjile;
@@ -30,7 +30,7 @@ public class EnvironmentSystemManager : MonoBehaviour
     {
         if (Instance)
             return;
-        
+
         Instance = this;
     }
 
@@ -84,12 +84,12 @@ public class EnvironmentSystemManager : MonoBehaviour
     {
         int count = 0;
         int total = shardDroppers.Count;
-        foreach(var shardDropper in shardDroppers)
+        foreach (var shardDropper in shardDroppers)
             if (shardDropper.isDropped)
                 count++;
-        
+
         OnShardGet.Invoke(count, total);
-        
+
         return count >= total;
     }
 
@@ -106,9 +106,9 @@ public class EnvironmentSystemManager : MonoBehaviour
     private IEnumerator OnRoomCompleteOperation()
     {
         Debug.Log($"Completed Room {roomName}");
-        
+
         //Do Dialogue
-        
+
         yield return new WaitUntil(() => Player.Instance.currentState == Player.State.IsPlaying);
         LoadSceneSystem.Instance.LoadNextRoom(roomName);
     }
@@ -117,11 +117,17 @@ public class EnvironmentSystemManager : MonoBehaviour
     {
         foreach (var shardDropper in shardDroppers)
             shardDropper.ChangeSpriteState(blinkState);
-        
+
         // Changed 5/13/2026 12:14 AM
         if (blinkState)
+        {
             globalVolume.profile = disillusionedProjile;
+            AudioManager.Instance.PlayTrack("Audio/Music/disillusion");
+        }
         else
+        {
             globalVolume.profile = dreamcoreProfile;
+            AudioManager.Instance.PlayTrack($"Audio/Music/{AudioManager.Instance.currentTrack.name}");
+        }
     }
 }

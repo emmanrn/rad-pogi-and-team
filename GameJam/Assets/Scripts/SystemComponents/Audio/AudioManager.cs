@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public const float TRACK_TRANSITION_SPEED = 1f;
 
     public static AudioManager Instance { get; private set; }
+    public AudioTrack currentTrack { get; private set; }
     public Dictionary<int, AudioChannel> channels = new Dictionary<int, AudioChannel>();
 
 
@@ -191,5 +192,7 @@ public class AudioManager : MonoBehaviour
 
         return null;
     }
+
+    public void SetActiveTrack(AudioTrack track) => currentTrack = track;
 
 }

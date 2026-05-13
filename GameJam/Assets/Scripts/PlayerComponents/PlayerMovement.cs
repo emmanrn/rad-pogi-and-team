@@ -7,6 +7,9 @@ public class PlayerMovement
     private float speed;
     private float gravity;
     private Vector3 velocity = Vector3.zero;
+    // footsteps
+    private float footstepTimer;
+    private float footstepInterval = 0.5f;
     public void Init(CharacterController cc, Transform transform, float speed, float gravity)
     {
         this.cc = cc;
@@ -28,5 +31,28 @@ public class PlayerMovement
 
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
+
+        HandleMove(move);
+    }
+
+    private void HandleMove(Vector3 move)
+    {
+        // not moving or not grounded
+        if (move.magnitude <= 0.1f || !cc.isGrounded)
+        {
+            footstepTimer = 0f;
+            return;
+        }
+
+        footstepTimer -= Time.deltaTime;
+
+        if (footstepTimer <= 0f)
+        {
+            AudioManager.Instance.PlaySoundEffect(
+                $"Audio/SFX/footsteps/wood{Random.Range(1, 4)}"
+            );
+
+            footstepTimer = footstepInterval;
+        }
     }
 }
