@@ -91,3 +91,6 @@ crashlytics-build.properties
 GDD.md
 GEMINI.md
 Tutorial.md
+
+# dont include appdata
+appdata/
