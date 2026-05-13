@@ -3747,7 +3747,7 @@ PrefabInstance:
     - target: {fileID: 7898932476694499696, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: 'sprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: 808dbbe3ba9bab44b9a726dd6c624f97, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8636161698051426277, guid: f77d5ea653b74db47925715f18d04ea7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.12
@@ -4648,6 +4648,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4180520873285953678, guid: ba4a1ceda4889ea41a31ef13d129f8c5, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295221260909868270, guid: ba4a1ceda4889ea41a31ef13d129f8c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5666107379026318784, guid: ba4a1ceda4889ea41a31ef13d129f8c5, type: 3}

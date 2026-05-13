@@ -20,13 +20,6 @@ public class PlayerBlinkSystem : MonoBehaviour
 
     private void Start()
     {
-        SwitchToBlinking();
-    }
-
-    void SwitchToBlinking()
-    {
-        if (SceneManager.GetActiveScene().name == RoomType.PlayRoom)
-            isBlinking = true;
     }
 
     void Update()
