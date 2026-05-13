@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class Player : MonoBehaviour
     private PlayerMovement movement = new PlayerMovement();
     private PlayerCamera cam = new PlayerCamera();
     private PlayerInteraction interaction = new PlayerInteraction();
+    
+    public bool IsPlayerInitialized = false;
 
     void Awake()
     {
@@ -56,12 +59,15 @@ public class Player : MonoBehaviour
     //Initializes Player references and defaults. If fail to find references, return
     public void InitializePlayerController()
     {
+        IsPlayerInitialized = false;
+        
         cc = PlayerReference.Instance.cc;
         mainCamera = PlayerReference.Instance.cam;
 
         if (cc == null && mainCamera == null)
         {
             SetState(State.IsDisabled);
+            IsPlayerInitialized = true;
             return;
         }
         cameraTransform = mainCamera.transform;
@@ -70,8 +76,9 @@ public class Player : MonoBehaviour
         movement.Init(cc, cameraTransform, PLAYER_SPEED, PLAYER_GRAVITY);
         cam.Init(CAMERA_SENSITIVITY, X_ROTATION, cameraTransform);
         interaction.Init(mainCamera, interactableMask, prompt, INTERACT_DISTANCE);
-
+        
         SetState(State.IsPlaying);
+        IsPlayerInitialized = true;
     }
 
     void Update()
@@ -116,6 +123,7 @@ public class Player : MonoBehaviour
                 break;
 
             case State.IsLoading:
+                IsPlayerInitialized = false;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
