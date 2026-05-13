@@ -50,15 +50,6 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void CloseButtons()
-    {
-        buttons.SetActive(false);
-    }
-    public void OpenButtons()
-    {
-        buttons.SetActive(true);
-    }
-
     public void OpenRoot()
     {
         root.alpha = 1;
@@ -69,6 +60,7 @@ public class MenuManager : MonoBehaviour
 
     public void CloseRoot()
     {
+        GameConfiguration.activeConfig.Save();
         root.alpha = 0;
         root.blocksRaycasts = false;
         root.interactable = false;

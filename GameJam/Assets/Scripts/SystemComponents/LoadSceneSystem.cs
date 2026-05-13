@@ -48,9 +48,37 @@ public class LoadSceneSystem : MonoBehaviour
         if (Player.Instance != null)
             Player.Instance.SetState(Player.State.IsLoading);
 
+        if (GameConfiguration.activeConfig != null)
+            GameConfiguration.activeConfig.Save();
+
         //Load Scene and wait
         SceneManager.LoadScene(sceneName);
         yield return new WaitUntil(() => SceneManager.GetActiveScene().isLoaded);
+
+        AudioTrack track = null;
+        switch (sceneName)
+        {
+            case RoomType.Start:
+                track = AudioManager.Instance.PlayTrack("Audio/Music/disillusion");
+                AudioManager.Instance.SetActiveTrack(track);
+                break;
+            case RoomType.Kitchen:
+                track = AudioManager.Instance.PlayTrack("Audio/Music/dreamcore_kitchen");
+                AudioManager.Instance.SetActiveTrack(track);
+                break;
+            case RoomType.LivingRoom:
+                track = AudioManager.Instance.PlayTrack("Audio/Music/dreamcore_living_room");
+                AudioManager.Instance.SetActiveTrack(track);
+                break;
+            case RoomType.PlayRoom:
+                track = AudioManager.Instance.PlayTrack("Audio/Music/disillusion_2");
+                AudioManager.Instance.SetActiveTrack(track);
+                break;
+            case RoomType.Ending:
+                track = AudioManager.Instance.PlayTrack("Audio/Music/disillusion");
+                AudioManager.Instance.SetActiveTrack(track);
+                break;
+        }
 
 
         //Reinitialize Player
