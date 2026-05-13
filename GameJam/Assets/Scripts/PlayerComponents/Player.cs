@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         IsDisabled,
     }
 
-    public State currentState { get; set; } = State.IsPlaying;
+    [SerializeField] public State currentState = State.IsPlaying;
 
     [SerializeField] private CharacterController cc;
     [SerializeField] private Camera mainCamera;

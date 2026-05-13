@@ -6,7 +6,13 @@ namespace DialogComponents
     public class DialogLoader : MonoBehaviour
     {
         [SerializeField] private DialogObject dialogObject;
-        public IEnumerator LoadDialog()
+        
+        public void LoadDialog()
+        {
+            DialogSystem.Instance.SendDialogToUI(dialogObject);
+        }
+        
+        public IEnumerator AutoLoadDialog()
         {
             yield return new WaitUntil(() => Player.Instance.IsPlayerInitialized);
             DialogSystem.Instance.SendDialogToUI(dialogObject);
@@ -15,10 +21,7 @@ namespace DialogComponents
         private void Start()
         {
             if (dialogObject.loadOnPlay == true)
-                StartCoroutine(LoadDialog());
-            
-            Player.Instance.SetState(Player.State.IsInDialogue);
-            
+                StartCoroutine(AutoLoadDialog());
         }
     }
 }

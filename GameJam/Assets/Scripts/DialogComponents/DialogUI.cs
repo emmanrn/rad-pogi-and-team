@@ -39,6 +39,8 @@ namespace DialogComponents
             
             typewriter = new TypewriterEffect();
             originalDialogBoxColor = dialogBoxImage.color;
+            
+            dialogBox.SetActive(false);
         }
 
         public void LoadNextDialogue()
