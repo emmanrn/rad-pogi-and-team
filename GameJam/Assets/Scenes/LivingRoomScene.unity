@@ -3021,6 +3021,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6565280941943848527, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
+      propertyPath: dialogObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f3d3d560e7a19d4994eb730a1fc8ce0, type: 2}
     - target: {fileID: 8574661552066467860, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.49
@@ -3734,7 +3738,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 4150106d7f8554a4ca2435961dcd35df, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0ad4d24b39641f741aedfe6099f41ebc, type: 2}
+      objectReference: {fileID: 2100000, guid: 78db68a234742694f82a6a6bd3aaceb1, type: 2}
     - target: {fileID: 919132149155446097, guid: 4150106d7f8554a4ca2435961dcd35df, type: 3}
       propertyPath: m_Name
       value: LionPlush_Body
@@ -5446,7 +5450,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: f59a3b45d4a460546a0378fc29457c64, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0ad4d24b39641f741aedfe6099f41ebc, type: 2}
+      objectReference: {fileID: 2100000, guid: 78db68a234742694f82a6a6bd3aaceb1, type: 2}
     - target: {fileID: 919132149155446097, guid: f59a3b45d4a460546a0378fc29457c64, type: 3}
       propertyPath: m_Name
       value: LionPlush_Mane

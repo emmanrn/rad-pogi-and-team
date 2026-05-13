@@ -658,7 +658,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 165348dfa2b82514ebac52874abe0994, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0ad4d24b39641f741aedfe6099f41ebc, type: 2}
+      objectReference: {fileID: 2100000, guid: 78db68a234742694f82a6a6bd3aaceb1, type: 2}
     - target: {fileID: 919132149155446097, guid: 165348dfa2b82514ebac52874abe0994, type: 3}
       propertyPath: m_Name
       value: Fridge
@@ -1390,7 +1390,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 165348dfa2b82514ebac52874abe0994, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0ad4d24b39641f741aedfe6099f41ebc, type: 2}
+      objectReference: {fileID: 2100000, guid: 78db68a234742694f82a6a6bd3aaceb1, type: 2}
     - target: {fileID: 919132149155446097, guid: 165348dfa2b82514ebac52874abe0994, type: 3}
       propertyPath: m_Name
       value: Fridge
@@ -1833,7 +1833,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 165348dfa2b82514ebac52874abe0994, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0ad4d24b39641f741aedfe6099f41ebc, type: 2}
+      objectReference: {fileID: 2100000, guid: 78db68a234742694f82a6a6bd3aaceb1, type: 2}
     - target: {fileID: 919132149155446097, guid: 165348dfa2b82514ebac52874abe0994, type: 3}
       propertyPath: m_Name
       value: Fridge
@@ -2813,17 +2813,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6754248133303045523, guid: f1e431ba1ed98744d91b86871cb15305, type: 3}
   m_PrefabInstance: {fileID: 1341305932}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1474824755 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6290503017753785710, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-  m_PrefabInstance: {fileID: 3910846057563222376}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1482800475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3705,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e6bad720af231884682c4eb307f13e8a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0ad4d24b39641f741aedfe6099f41ebc, type: 2}
+      objectReference: {fileID: 2100000, guid: 71c3abba68a822c4c85c56af1d8ebc51, type: 2}
     - target: {fileID: 919132149155446097, guid: e6bad720af231884682c4eb307f13e8a, type: 3}
       propertyPath: m_Name
       value: SinkCountertop
@@ -4265,6 +4254,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6565280941943848527, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
+      propertyPath: dialogObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 15ea8b598fa490043b1cefaf9690e01c, type: 2}
     - target: {fileID: 8574661552066467860, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.99
@@ -4346,14 +4339,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 398739481147114812, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2519488071680285198, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3321669502419876674, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
       propertyPath: m_Name
       value: DialogCanvas
@@ -4438,38 +4423,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6290503017753785710, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_Color.a
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 6419529163410031793, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6419529163410031793, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6801483919647365397, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575804277566473661, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1243.771
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575804277566473661, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.000024795532
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575804277566473661, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -87
-      objectReference: {fileID: 0}
-    - target: {fileID: 8684585835581543420, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: dialogBoxImage
-      value: 
-      objectReference: {fileID: 1474824755}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

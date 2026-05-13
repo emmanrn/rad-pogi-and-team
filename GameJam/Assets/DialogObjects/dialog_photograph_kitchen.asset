@@ -10,16 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04dddad4eedc4201b462d2e9ace2a2f7, type: 3}
-  m_Name: dialog_photograph_playRoom
+  m_Name: dialog_photograph_kitchen
   m_EditorClassIdentifier: Assembly-CSharp::DialogComponents.DialogObject
   speaker: {fileID: 0}
   dialogs:
-  - 'She brought it down with her. '
-  - 
-  - Both things were real.
-  - 
+  - A photograph of somethingn familiar.
   loadOnPlay: 0
-  isBGColorOverride: 1
-  BgColorOverrides:
-  - bgColor: {r: 0, g: 0, b: 0, a: 0}
-    id: 1
+  isBGColorOverride: 0
+  BgColorOverrides: []

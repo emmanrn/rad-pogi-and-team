@@ -19,9 +19,9 @@ MonoBehaviour:
   - You were not blind.
   - 
   loadOnPlay: 0
-  isBGColorOverride: 0
+  isBGColorOverride: 1
   BgColorOverrides:
-  - bgColor: {r: 1, g: 1, b: 1, a: 0}
+  - bgColor: {r: 1, g: 1, b: 1, a: 1}
     id: 0
-  - bgColor: {r: 0, g: 0, b: 0, a: 0}
+  - bgColor: {r: 0, g: 0, b: 0, a: 1}
     id: 3
