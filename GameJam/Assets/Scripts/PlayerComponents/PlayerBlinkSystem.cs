@@ -37,8 +37,8 @@ public class PlayerBlinkSystem : MonoBehaviour
             OnPanicMeterChange.Invoke(panicAmount);
         }
 
-        if (Player.Instance.currentState != Player.State.IsPlaying || PauseSystem.Instance.paused)
-            return;
+        if (Player.Instance == null) return;
+        if (Player.Instance.currentState != Player.State.IsPlaying || PauseSystem.Instance.paused) return;
 
         if (Input.GetKeyDown(KeyCode.R))
         {
