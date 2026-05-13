@@ -11,7 +11,7 @@ public class BlinkIcon : MonoBehaviour
 
     private void Start()
     {
-       DisableIconOnPlayerRoom();
+       // DisableIconOnPlayerRoom();
     }
 
     private void DisableIconOnPlayerRoom()

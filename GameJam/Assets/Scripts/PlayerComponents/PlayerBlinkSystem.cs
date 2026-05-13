@@ -20,13 +20,13 @@ public class PlayerBlinkSystem : MonoBehaviour
 
     private void Start()
     {
-        DisableBlinkingAtPlayRoom();
+        SwitchToBlinking();
     }
 
-    void DisableBlinkingAtPlayRoom()
+    void SwitchToBlinking()
     {
         if (SceneManager.GetActiveScene().name == RoomType.PlayRoom)
-            this.enabled = false;
+            isBlinking = true;
     }
 
     void Update()

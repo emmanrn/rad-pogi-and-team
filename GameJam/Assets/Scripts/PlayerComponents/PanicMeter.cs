@@ -10,8 +10,8 @@ public class PanicMeter : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == RoomType.PlayRoom)
-            gameObject.SetActive(false);
+        // if (SceneManager.GetActiveScene().name == RoomType.PlayRoom)
+        //     gameObject.SetActive(false);
         
         canvasGroup.alpha = 0;
     }
