@@ -2470,14 +2470,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Photograph
       objectReference: {fileID: 0}
-    - target: {fileID: 6073817037673602057, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6565280941943848527, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
-      propertyPath: dialogObject
-      value: 
-      objectReference: {fileID: 11400000, guid: b741ec224055818479816710564442b1, type: 2}
     - target: {fileID: 8574661552066467860, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.88

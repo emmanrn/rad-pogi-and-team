@@ -3013,10 +3013,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 968155077}
     m_Modifications:
-    - target: {fileID: 2204964314978760824, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
-      propertyPath: photoName
-      value: 'Photograph '
-      objectReference: {fileID: 0}
     - target: {fileID: 6073817037673602057, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: m_Name
       value: Photograph
@@ -3025,10 +3021,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6565280941943848527, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
-      propertyPath: dialogObject
-      value: 
-      objectReference: {fileID: 11400000, guid: 3f3d3d560e7a19d4994eb730a1fc8ce0, type: 2}
     - target: {fileID: 8574661552066467860, guid: e11eec9a04a56034299127d402bd37f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.49
@@ -4156,10 +4148,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 398739481147114812, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2910213994623279184, guid: 8a7910686e2056849a753b03d0340d1e, type: 3}
       propertyPath: m_Camera
       value: 
