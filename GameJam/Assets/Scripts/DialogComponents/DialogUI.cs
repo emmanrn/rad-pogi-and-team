@@ -1,6 +1,8 @@
 ﻿using System.Collections;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DialogComponents
 {
@@ -10,6 +12,8 @@ namespace DialogComponents
 
         [SerializeField] private TMP_Text dialogText;
         [SerializeField] private GameObject dialogBox;
+        [SerializeField] private Image dialogBoxImage;
+        private Color originalDialogBoxColor;
 
         public bool IsTyping { get; private set; }
         private TypewriterEffect typewriter;
@@ -20,6 +24,7 @@ namespace DialogComponents
 
         private DialogObject currentDialog;
         private int index;
+        
 
         void Awake()
         {
@@ -33,6 +38,7 @@ namespace DialogComponents
             DontDestroyOnLoad(gameObject);
             
             typewriter = new TypewriterEffect();
+            originalDialogBoxColor = dialogBoxImage.color;
         }
 
         public void LoadNextDialogue()
@@ -62,6 +68,8 @@ namespace DialogComponents
 
             Show();
             ShowNextLine();
+            
+            Player.Instance.SetState(Player.State.IsInDialogue);
         }
         public void ShowNextLine()
         {
@@ -74,6 +82,15 @@ namespace DialogComponents
                 return;
             }
 
+            //Scuffed
+            if (currentDialog.isBGColorOverride)
+            {
+               DialogObject.BGColorOverride colorOverride = null;
+                colorOverride = currentDialog.BgColorOverrides.ToList().Find(c => c.id == index);
+                if (colorOverride != null)
+                    dialogBoxImage.color = colorOverride.bgColor;
+            }
+            
             string line = currentDialog.dialogs[index];
             index++;
 
@@ -133,6 +150,7 @@ namespace DialogComponents
         private void EndDialog()
         {
             currentDialog = null;
+            dialogBoxImage.color = originalDialogBoxColor;
             Hide();
             Player.Instance.SetState(Player.State.IsPlaying);
         }
