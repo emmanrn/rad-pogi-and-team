@@ -21,5 +21,5 @@ MonoBehaviour:
   loadOnPlay: 0
   isBGColorOverride: 1
   BgColorOverrides:
-  - bgColor: {r: 0, g: 0, b: 0, a: 0}
+  - bgColor: {r: 0, g: 0, b: 0, a: 1}
     id: 1
